@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/simracing-manager/browser",
+            "outputPath": "dist/simracing-manager",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
