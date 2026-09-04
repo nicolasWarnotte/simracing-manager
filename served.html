@@ -1,45 +1,23 @@
-<!doctype html>
-<html lang="fr" data-critters-container>
-
+<!DOCTYPE html>
+<html>
 <head>
-
-  <meta charset="utf-8">
-<!-- This site is hosted on Netlify. Anyone can build and deploy a site
-     like this one for free: https://netlify.new/?utm_campaign=ai-legible&utm_source=comment&utm_medium=referral&utm_id=1447ee2a-4477-4f72-8054-2f013e9cbbec
-     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
-<meta name="hosting-provider" content="Netlify">
-<meta name="netlify-deploy" content="https://netlify.new/?utm_campaign=ai-legible&amp;utm_source=meta&amp;utm_medium=referral&amp;utm_id=1447ee2a-4477-4f72-8054-2f013e9cbbec">
-
-  <title>
-    SimRacing Manager
-  </title>
-
-  <base href="/">
-
-  <meta name="viewport" content="
-      width=device-width,
-      initial-scale=1,
-      viewport-fit=cover
-    ">
-
-  <meta name="theme-color" content="#111111">
-
-  <meta name="description" content="
-      Gestion des participants et du classement
-      des événements de simracing.
-    ">
-
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-  <link rel="manifest" href="manifest.webmanifest">
-
-<style>@charset "UTF-8";*{box-sizing:border-box}html,body{margin:0;padding:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#f4f5f7;color:#171717}body{min-height:100vh}
-</style><link rel="stylesheet" href="styles-JEJ4WJ46.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-JEJ4WJ46.css"></noscript></head>
-
+    <title>Login Redirect</title>
+</head>
 <body>
+    <script>
+        window.onload = function() {
+            var fragment = window.location.hash;
+            var url = new URL('https:\/\/app.netlify.com\/edge-access?domain=monumental-palmier-ecaab7.netlify.app\u0026requested_path=%2Findex.html\u0026site_id=1447ee2a-4477-4f72-8054-2f013e9cbbec');
+            if (fragment) {
+                var requestedPath = url.searchParams.get('requested_path');
+                url.searchParams.set('requested_path', requestedPath + fragment);
+            }
+            window.location.href = url.toString();
+        };
+    </script>
 
-  <app-root></app-root>
-
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-7PTA2MDK.js" type="module"></script></body>
-
-</html><script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="1447ee2a-4477-4f72-8054-2f013e9cbbec" data-app-host="app.netlify.com"></script>
+    <noscript>
+        <p>Please enable JavaScript to continue. This login redirect requires JavaScript.</p>
+    </noscript>
+</body>
+</html>

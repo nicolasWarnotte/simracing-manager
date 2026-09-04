@@ -1,0 +1,52 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main   # change en "master" si c'est le nom de ta branche principale
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Build Angular (production)
+        run: npx ng build
+
+      - name: Copier index.html en 404.html (fallback SPA)
+        run: cp dist/simracing-manager/browser/index.html dist/simracing-manager/browser/404.html
+
+      - name: Préparer les fichiers pour GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/simracing-manager/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Déployer sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
