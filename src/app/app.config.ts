@@ -31,7 +31,7 @@ export const appConfig:
           !isDevMode(),
 
         registrationStrategy:
-          'registerWhenStable:30000'
+          'registerImmediately'
       }
     )
 
