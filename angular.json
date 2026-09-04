@@ -20,6 +20,7 @@
             "outputPath": "dist/simracing-manager",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "/simracing-manager/",
             "polyfills": [
               "zone.js"
             ],
