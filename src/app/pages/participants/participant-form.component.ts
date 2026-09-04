@@ -215,18 +215,18 @@ import {
             type="text"
             formControlName="time"
             inputmode="decimal"
-            placeholder="01:32.421"
+            placeholder="1.32.421"
           >
 
           <small class="hint">
-            Format : MM:SS.mmm
+            Format : M.SS.mmm
           </small>
 
           @if (timeError) {
 
             <small class="error">
               Format invalide.
-              Exemple : 01:32.421
+              Exemple : 1.32.421
             </small>
 
           }
@@ -387,7 +387,7 @@ export class ParticipantFormComponent {
 
     const match =
       value.match(
-        /^(\d{1,2}):(\d{2})\.(\d{3})$/
+        /^(\d{1,2})\.(\d{2})\.(\d{3})$/
       );
 
     if (!match) {

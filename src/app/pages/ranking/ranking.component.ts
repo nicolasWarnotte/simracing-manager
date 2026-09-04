@@ -392,7 +392,7 @@ export class RankingComponent
       timeMs % 1000;
 
     return (
-      `${String(minutes).padStart(2, '0')}:` +
+      `${minutes}.` +
       `${String(seconds).padStart(2, '0')}.` +
       `${String(milliseconds).padStart(3, '0')}`
     );
