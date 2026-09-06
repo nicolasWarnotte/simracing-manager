@@ -312,7 +312,7 @@ input:focus {
     70px
     minmax(0, 1fr)
     150px
-    100px;
+    auto;
 
   align-items: center;
 
@@ -381,11 +381,19 @@ input:focus {
   font-weight: 700;
 }
 
-.edit-button {
+.row-actions {
   justify-self: end;
 
-  color: #555;
+  display: flex;
 
+  align-items: center;
+
+  gap: 10px;
+}
+
+.edit-button {
+  color: #555;
+  margin-left: 30px;
   font-size: 14px;
 
   text-decoration: none;
@@ -395,6 +403,32 @@ input:focus {
 
 .edit-button:hover {
   text-decoration: underline;
+}
+
+.delete-button {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #fbe4e4;
 }
 
 
@@ -602,6 +636,12 @@ input:focus {
   }
 
   .edit-button {
+    grid-column: 2;
+
+    justify-self: start;
+  }
+
+  .row-actions {
     grid-column: 2;
 
     justify-self: start;

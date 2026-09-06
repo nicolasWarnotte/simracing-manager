@@ -158,19 +158,33 @@ import {
                 </div>
 
 
-                <!-- ACTION -->
+                <!-- ACTIONS -->
 
-                <a
-                  class="edit-button"
-                  [routerLink]="[
-                    '/participants',
-                    participant.id,
-                    'time'
-                  ]"
-                  aria-label="Modifier le temps"
-                >
-                  Modifier
-                </a>
+                <div class="row-actions">
+
+                  <a
+                    class="edit-button ml-10"
+                    [routerLink]="[
+                      '/participants',
+                      participant.id,
+                      'time'
+                    ]"
+                    aria-label="Modifier le temps"
+                  >
+                    Modifier
+                  </a>
+
+                  <button
+                    type="button"
+                    class="delete-button"
+                    (click)="deleteParticipant(participant)"
+                    aria-label="Supprimer le participant"
+                    title="Supprimer"
+                  >
+                    🗑️
+                  </button>
+
+                </div>
 
               </div>
 
@@ -271,6 +285,16 @@ import {
                 >
                   Ajouter le temps
                 </a>
+
+                <button
+                  type="button"
+                  class="delete-button"
+                  (click)="deleteParticipant(participant)"
+                  aria-label="Supprimer le participant"
+                  title="Supprimer"
+                >
+                  🗑️
+                </button>
 
               </div>
 
@@ -409,5 +433,35 @@ export class RankingComponent
     this.csvService.exportParticipants(
       allParticipants
     );
+  }
+
+
+  async deleteParticipant(
+    participant: Participant
+  ): Promise<void> {
+
+    const password =
+      prompt(
+        `Mot de passe requis pour supprimer ${participant.firstName} ${participant.lastName} :`
+      );
+
+    if (password === null) {
+      return;
+    }
+
+    if (password !== '2977') {
+
+      alert(
+        'Mot de passe incorrect.'
+      );
+
+      return;
+    }
+
+    await this.participantService.delete(
+      participant.id
+    );
+
+    await this.load();
   }
 }
