@@ -449,7 +449,7 @@ export class RankingComponent
       return;
     }
 
-    if (password !== '2977') {
+    if (password !== '2609') {
 
       alert(
         'Mot de passe incorrect.'
