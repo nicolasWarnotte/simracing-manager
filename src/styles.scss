@@ -46,12 +46,13 @@ input {
 
   display: flex;
   align-items: center;
+  justify-content: space-around;
 
   padding: 0 28px;
 
-  background: #111111;
+  background: #fff;
 
-  color: white;
+  color: black;
 }
 
 
@@ -610,7 +611,7 @@ input:focus {
   }
 
   .ranking-header .add-button {
-    width: 100%;
+    width: auto;
   }
 
   .ranking-row {
@@ -673,3 +674,11 @@ input:focus {
     width: 100%;
   }
 }
+.ranking-header .add-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+

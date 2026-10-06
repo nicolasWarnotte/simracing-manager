@@ -58,7 +58,7 @@ import {
         <div class="field">
 
           <label for="firstName">
-            Firstname/Vorname
+            Prénom
           </label>
 
           <input
@@ -88,7 +88,7 @@ import {
         <div class="field">
 
           <label for="lastName">
-            Lastname/Nachname
+            Nom
           </label>
 
           <input
@@ -113,98 +113,13 @@ import {
         </div>
 
 
-        <!-- EMAIL -->
-
-        <div class="field">
-
-          <label for="email">
-            Email/E-Mail
-          </label>
-
-          <input
-            id="email"
-            type="email"
-            formControlName="email"
-            autocomplete="email"
-            placeholder="jean@entreprise.be"
-          >
-
-          @if (
-            form.controls.email.touched &&
-            form.controls.email.invalid
-          ) {
-
-            <small class="error">
-              L'adresse email n'est pas valide.
-            </small>
-
-          }
-
-        </div>
-
-
-        <!-- TÉLÉPHONE -->
-
-        <div class="field">
-
-          <label for="phone">
-            Phone/Telefon
-          </label>
-
-          <input
-            id="phone"
-            type="tel"
-            formControlName="phone"
-            autocomplete="tel"
-            placeholder="0470 00 00 00"
-          >
-
-        </div>
-
-
-        <!-- SOCIÉTÉ -->
-
-        <div class="field">
-
-          <label for="company">
-            Company/Firma
-          </label>
-
-          <input
-            id="company"
-            type="text"
-            formControlName="company"
-            autocomplete="organization"
-            placeholder="Nom de la société"
-          >
-
-        </div>
-
-
-        <!-- FONCTION -->
-
-        <div class="field">
-
-          <label for="role">
-            Role/Funktion
-          </label>
-
-          <input
-            id="role"
-            type="text"
-            formControlName="role"
-            placeholder="CEO, Manager, etc."
-          >
-
-        </div>
-
 
         <!-- TEMPS -->
 
         <div class="field">
 
           <label for="time">
-            Time/Erreichte Zeit
+            Temps
             <span class="optional">
               (facultatif)
             </span>
@@ -286,22 +201,7 @@ export class ParticipantFormComponent {
         Validators.required
       ],
 
-      email: [
-        '',
-        Validators.email
-      ],
 
-      phone: [
-        ''
-      ],
-
-      company: [
-        ''
-      ],
-
-      role: [
-        ''
-      ],
 
       // IMPORTANT :
       // pas de Validators.required
@@ -356,18 +256,6 @@ export class ParticipantFormComponent {
 
       lastName:
         value.lastName.trim(),
-
-      email:
-        value.email.trim(),
-
-      phone:
-        value.phone.trim(),
-
-      company:
-        value.company.trim(),
-
-      role:
-        value.role.trim(),
 
       timeMs,
 

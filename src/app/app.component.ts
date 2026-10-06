@@ -26,7 +26,9 @@ import {
         >
 
       </div>
-
+      <div>
+      Challenge BMW M2 compétition
+      </div>
     </header>
 
     <main class="app-main">

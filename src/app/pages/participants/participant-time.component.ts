@@ -74,13 +74,7 @@ import {
               {{ participant.lastName }}
             </p>
 
-            @if (participant.company) {
-
-              <span class="participant-company">
-                {{ participant.company }}
-              </span>
-
-            }
+          
 
           </div>
 

@@ -136,13 +136,7 @@ import {
                     {{ participant.lastName }}
                   </strong>
 
-                  @if (participant.company) {
-
-                    <span>
-                      {{ participant.company }}
-                    </span>
-
-                  }
+                
 
                 </div>
 
@@ -262,15 +256,7 @@ import {
                     {{ participant.lastName }}
                   </strong>
 
-                  @if (
-                    participant.company
-                  ) {
-
-                    <span>
-                      {{ participant.company }}
-                    </span>
-
-                  }
+                  
 
                 </div>
 

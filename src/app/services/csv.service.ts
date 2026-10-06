@@ -45,10 +45,6 @@ export class CsvService {
       'Position',
       'Nom',
       'Prénom',
-      'Email',
-      'Téléphone',
-      'Société',
-      'Fonction',
       'Temps'
     ];
 
@@ -72,10 +68,6 @@ export class CsvService {
             participantPosition,
             participant.lastName,
             participant.firstName,
-            participant.email,
-            participant.phone,
-            participant.company,
-            participant.role,
             this.formatTime(
               participant.timeMs
             )
